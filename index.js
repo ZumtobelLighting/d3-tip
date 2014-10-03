@@ -57,7 +57,7 @@
         .attr('width', item.attr('width'))
         .attr('height', item.attr('height'))
         .attr('y', item.attr('y'))
-        .attr('x', axis(this.datum().date));
+        .attr('x', axis(item.datum().date));
 
       while(i--) nodel.classed(directions[i], false)
       coords = direction_callbacks.get(dir).apply(this)
