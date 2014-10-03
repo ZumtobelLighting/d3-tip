@@ -16,14 +16,15 @@
   // Public - contructs a new tooltip
   //
   // Returns a tip
-  return function() {
+  return function(xAxis) {
     var direction = d3_tip_direction,
         offset    = d3_tip_offset,
         html      = d3_tip_html,
         node      = initNode(),
         svg       = null,
         point     = null,
-        target    = null
+        target    = null,
+        axis = xAxis
 
     function tip(vis) {
       svg = getSVGNode(vis)
@@ -49,6 +50,14 @@
 
       nodel.html(content)
         .style({ opacity: 1, 'pointer-events': 'all' })
+      //add the bah dude
+      var item  = d3.select(this);
+      this.parentNode.append('rect')
+        .attr('class', 'tip')
+        .attr('width', item.attr('width'))
+        .attr('height', item.attr('height'))
+        .attr('y', item.attr('y'))
+        .attr('x', axis(this.datum().date));
 
       while(i--) nodel.classed(directions[i], false)
       coords = direction_callbacks.get(dir).apply(this)
@@ -64,8 +73,9 @@
     //
     // Returns a tip
     tip.hide = function() {
-      var nodel = d3.select(node)
-      nodel.style({ opacity: 0, 'pointer-events': 'none' })
+      var nodel = d3.select(node);
+      nodel.style({ opacity: 0, 'pointer-events': 'none' });
+      d3.select('tip').remove();
       return tip
     }
 
