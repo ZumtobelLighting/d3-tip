@@ -16,7 +16,7 @@
   // Public - contructs a new tooltip
   //
   // Returns a tip
-  return function(xAxis) {
+  return function() {
     var direction = d3_tip_direction,
         offset    = d3_tip_offset,
         html      = d3_tip_html,
@@ -24,10 +24,11 @@
         svg       = null,
         point     = null,
         target    = null,
-        axis = xAxis
+        axis = null
 
-    function tip(vis) {
-      svg = getSVGNode(vis)
+    function tip(vis,Xaxis) {
+      svg = getSVGNode(vis);
+      axis = Xaxis
       point = svg.createSVGPoint()
       document.body.appendChild(node)
     }
@@ -54,7 +55,7 @@
       var item  = d3.select(this);
       d3.select(this.parentNode).append('rect')
         .attr('class', 'tip')
-        .attr('width', item.attr('width'))
+        .attr('width', 2)
         .attr('height', item.attr('height'))
         .attr('y', item.attr('y'))
         .attr('x', axis(item.datum().date));
