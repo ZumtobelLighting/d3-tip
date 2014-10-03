@@ -52,7 +52,7 @@
         .style({ opacity: 1, 'pointer-events': 'all' })
       //add the bah dude
       var item  = d3.select(this);
-      this.parentNode.append('rect')
+      d3.select(this.parentNode).append('rect')
         .attr('class', 'tip')
         .attr('width', item.attr('width'))
         .attr('height', item.attr('height'))
