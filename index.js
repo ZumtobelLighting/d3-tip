@@ -54,12 +54,13 @@
       //add the bah dude
       var item  = d3.select(this);
       if (d3.select('.tip').empty()) {
-      d3.select(this.parentNode).append('rect')
-        .attr('class', 'tip')
-        .attr('width', 2)
-        .attr('height', item.attr('height'))
-        .attr('y', item.attr('y'))
-        .attr('x', axis(item.datum().date));
+        document.body.appendChild(node);
+        d3.select(this.parentNode).append('rect')
+          .attr('class', 'tip')
+          .attr('width', 2)
+          .attr('height', item.attr('height'))
+          .attr('y', item.attr('y'))
+          .attr('x', axis(item.datum().date));
       }
 
       while(i--) nodel.classed(directions[i], false)
@@ -79,6 +80,7 @@
       var nodel = d3.select(node);
       nodel.style({ opacity: 0, 'pointer-events': 'none' });
       d3.selectAll('.tip').remove();
+      d3.selectAll('.d3-tip').remove();
       return tip
     }
 
