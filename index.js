@@ -60,7 +60,7 @@
           .attr('width', 2)
           .attr('height', item.attr('height'))
           .attr('y', item.attr('y'))
-          .attr('x', axis(item.datum().date));
+          .attr('x', axis(item.datum()));
       }
 
       while(i--) nodel.classed(directions[i], false)
