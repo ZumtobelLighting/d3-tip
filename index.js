@@ -51,7 +51,8 @@
 
       //add the bah dude
       var item  = d3.select(this);
-      if (d3.select('.tip').empty()) {
+      if (!d3.select('.tip').empty()) 
+        d3.select('.tip').remove()
         document.body.appendChild(node);
         d3.select(this.parentNode).append('rect')
           .attr('class', 'tip')
@@ -69,7 +70,7 @@
         top: (coords.top +  poffset[0]) + scrollTop + 'px',
         left: (coords.left + poffset[1]) + scrollLeft + 'px'
       })
-      }
+      
 
       return tip
     }
