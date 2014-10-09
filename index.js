@@ -61,7 +61,9 @@
           .attr('height', item.attr('height'))
           .attr('y', item.attr('y'))
           .attr('x', axis(item.datum()));
-      }
+          nodel.html(content)
+        .style({ opacity: 1, 'pointer-events': 'all' })
+      
 
       while(i--) nodel.classed(directions[i], false)
       coords = direction_callbacks.get(dir).apply(this)
@@ -69,6 +71,7 @@
         top: (coords.top +  poffset[0]) + scrollTop + 'px',
         left: (coords.left + poffset[1]) + scrollLeft + 'px'
       })
+      }
 
       return tip
     }
