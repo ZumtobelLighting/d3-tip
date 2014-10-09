@@ -49,8 +49,6 @@
           scrollTop  = document.documentElement.scrollTop || document.body.scrollTop,
           scrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft
 
-      nodel.html(content)
-        .style({ opacity: 1, 'pointer-events': 'all' })
       //add the bah dude
       var item  = d3.select(this);
       if (d3.select('.tip').empty()) {
