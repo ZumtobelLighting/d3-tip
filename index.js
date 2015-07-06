@@ -9,7 +9,7 @@
     define(['d3'], factory)
   } else {
     // Browser global.
-    root.d3.tip = factory(root.d3)
+    root.d3.tipc = factory(root.d3)
   }
 }(this, function (d3) {
 
