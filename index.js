@@ -56,7 +56,7 @@
         document.body.appendChild(node);
         d3.select(this.parentNode).append('rect')
           .attr('class', 'tip')
-          .attr('width', 2)
+          .attr('width', 1)
           .attr('height', item.attr('height'))
           .attr('y', item.attr('y'))
           .attr('x', axis(item.datum()));
