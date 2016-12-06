@@ -218,7 +218,7 @@
       var bbox = getScreenBBox()
       return {
         top:  bbox.ne.y - node.offsetHeight,
-        left: bbox.ne.x - parseInt(d3.select(".bar").attr("width"))
+        left: bbox.ne.x - parseInt(d3.select("svg#chartView .bar").attr("width"))
       }
     }
 
