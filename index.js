@@ -37,11 +37,13 @@
         node        = initNode(),
         svg         = null,
         point       = null,
-        target      = null
+        target      = null,
+        axis = null
 
-    function tip(vis) {
+    function tip(vis, Xaxis) {
       svg = getSVGNode(vis)
       if (!svg) return
+        axis = Xaxis;
       point = svg.createSVGPoint()
       rootElement.appendChild(node)
     }
